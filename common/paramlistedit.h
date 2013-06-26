@@ -23,7 +23,7 @@
 
 #include <QtWidgets/QDialog>
 
-#include "/home/arcnexus/MayaProject/build-openrpt-Desktop-Debug/common/tmp/ui_paramlistedit.h"
+#include "tmp/ui_paramlistedit.h"
 
 class ParamListEdit : public QDialog, public Ui::ParamListEdit
 {

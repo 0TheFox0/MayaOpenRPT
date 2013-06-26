@@ -115,7 +115,7 @@ void XSqlQuery::setNameErrorValue(QString v)
 
 
 XSqlQuery::XSqlQuery() :
-  QSqlQuery()
+    QSqlQuery(QSqlDatabase::database("Reports"))
 {
   _data = new XSqlQueryPrivate(this);
 }

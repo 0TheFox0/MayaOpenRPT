@@ -541,11 +541,11 @@ QAction * ReportHandler::populateMenuBar(QMenuBar * menubar, QAction * exitActio
     connect(mDb, SIGNAL(aboutToShow()), this, SLOT(dbMenuAboutToShow()));
     mDb->addAction(dbLoadAction);
     mDb->addAction(dbSaveAction);
-    if(_allowDBConnect)
+  /*  if(_allowDBConnect)
     {
       mDb->addSeparator();
       mDb->addAction(dbConnectAction);
-    }
+    }*/
   }
 
   QMenu * mEdit = menubar->addMenu(tr("&Edit"));
@@ -597,7 +597,7 @@ QAction * ReportHandler::populateMenuBar(QMenuBar * menubar, QAction * exitActio
 void ReportHandler::setParentWindow(QWidget * pw)
 {
   _parentWindow = pw;
-  _parentWindowIsWorkspace = (pw && (pw->metaObject()->className() == QString("QMdiArea")));
+  _parentWindowIsWorkspace = true;// (pw && (pw->metaObject()->className() == QString("QMdiArea")));
 }
 
 
@@ -1375,7 +1375,6 @@ void ReportHandler::dbConnect() {
 
         if(newdlg.exec() == QDialog::Accepted) {
           OpenRPT::databaseURL = newdlg._databaseURL;
-
   // The following is code that works specifically with the xTuple ERP database
   // This should be expanded to be usefull when not connecting to an xTuple ERP
   // database as well. Command line option maybe?
@@ -1454,7 +1453,7 @@ void ReportHandler::dbConnect() {
 }
 
 void ReportHandler::dbLoadDoc() {
-    QSqlDatabase db = QSqlDatabase::database(QSqlDatabase::defaultConnection, false);
+    QSqlDatabase db = QSqlDatabase::database(/*QSqlDatabase::defaultConnection*/"Reports", false);
     if(db.isValid()) {
         DBFileDialog rptDiag;
         rptDiag.setWindowTitle(tr("Load Report from Database"));
@@ -1487,7 +1486,7 @@ void ReportHandler::dbLoadDoc() {
 
 void ReportHandler::dbSaveDoc()
 {
-  QSqlDatabase db = QSqlDatabase::database(QSqlDatabase::defaultConnection, false);
+    QSqlDatabase db = QSqlDatabase::database(/*QSqlDatabase::defaultConnection*/"Reports", false);
   if(db.isValid())
   {
     DocumentWindow * gw = activeDocumentWindow();
@@ -1534,8 +1533,8 @@ DocumentWindow * ReportHandler::activeDocumentWindow()
         for(int it = 0; it < gwList.count(); it++)
         {
           gw = gwList.at(it);
-          if(gw && QApplication::activeWindow() == gw)
-            return gw;
+          //if(gw /*&& QApplication::activeWindow() == gw*/)
+          return gw;
         }
     }
     return 0;
@@ -1573,16 +1572,16 @@ void ReportHandler::removeReportWindow(QObject * obj)
 // dbMenuAboutToShow
 //
 void ReportHandler::dbMenuAboutToShow() {
-    QSqlDatabase db = QSqlDatabase::database(QSqlDatabase::defaultConnection, false);
-    if(db.isValid() && db.isOpen() && _databaseElt.isNull()) {
+   // QSqlDatabase db = QSqlDatabase::database(QSqlDatabase::defaultConnection, false);
+   // if(db.isValid() && db.isOpen() && _databaseElt.isNull()) {
         dbLoadAction->setEnabled(true);
         dbSaveAction->setEnabled(true);
-        dbConnectAction->setText(_strMenuDisconnect);
+    /*    dbConnectAction->setText(_strMenuDisconnect);
     } else {
         dbLoadAction->setEnabled(false);
         dbSaveAction->setEnabled(false);
         dbConnectAction->setText(_strMenuConnect);
-    }
+    }*/
 }
 
 void ReportHandler::filePreview()

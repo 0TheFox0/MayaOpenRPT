@@ -18,9 +18,9 @@
  * Please contact info@openmfg.com with any questions on this license.
  */
 
-#include <QApplication>
+#include <QtWidgets/QApplication>
 #include <QSettings>
-#include <QSplashScreen>
+#include <QtWidgets/QSplashScreen>
 #include <QLocale>
 
 #include <data.h>

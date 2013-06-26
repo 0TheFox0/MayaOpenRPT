@@ -47,7 +47,7 @@ DBFileDialog::DBFileDialog(QWidget* parent, Qt::WindowFlags fl)
     item->setData(1, Qt::TextAlignmentRole, Qt::AlignLeft);
     item->setData(2, Qt::TextAlignmentRole, Qt::AlignRight);
 
-    XSqlQuery qry(getSqlFromTag("fmt12", QSqlDatabase::database().driverName()));
+    XSqlQuery qry(getSqlFromTag("fmt12", QSqlDatabase::database().driverName()),QSqlDatabase::database("Maya"));
     while(qry.next())
     {
       QTreeWidgetItem * item = new QTreeWidgetItem(_list, QStringList() << qry.value("report_name").toString() << qry.value("report_grade").toString());
@@ -88,8 +88,8 @@ QString DBFileDialog::getSource()
 {
   int rid = getId();
   if(rid != -1) {
-    XSqlQuery src_qry;
-    src_qry.prepare(getSqlFromTag("fmt13", QSqlDatabase::database().driverName()));	// MANU
+      XSqlQuery src_qry(QSqlDatabase::database("Maya"));
+    src_qry.prepare(getSqlFromTag("fmt13", QSqlDatabase::database("Maya").driverName()));	// MANU
     src_qry.bindValue(":report_id", rid);
     src_qry.exec();
     if(src_qry.first())
@@ -103,8 +103,8 @@ QString DBFileDialog::getNameById()
   int rid = getId();
   if(rid != -1)
   {
-	  XSqlQuery src_qry;
-    src_qry.prepare(getSqlFromTag("fmt14", QSqlDatabase::database().driverName())); // MANU
+      XSqlQuery src_qry(QSqlDatabase::database("Maya"));
+    src_qry.prepare(getSqlFromTag("fmt14", QSqlDatabase::database("Maya").driverName())); // MANU
     src_qry.bindValue(":report_id", rid);
     src_qry.exec();
 	  if(src_qry.first())
@@ -118,8 +118,8 @@ int DBFileDialog::getGradeById()
   int rid = getId();
   if(rid != -1)
   {
-	  XSqlQuery src_qry;
-    src_qry.prepare(getSqlFromTag("fmt15", QSqlDatabase::database().driverName()));	// MANU
+      XSqlQuery src_qry(QSqlDatabase::database("Maya"));
+    src_qry.prepare(getSqlFromTag("fmt15",QSqlDatabase::database("Maya").driverName()));	// MANU
     src_qry.bindValue(":report_id", rid);
     src_qry.exec();
 	  if(src_qry.first())

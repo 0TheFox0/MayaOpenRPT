@@ -37,9 +37,9 @@ class ORODocument;
 //
 class ORPreRender {
   public:
-    ORPreRender(QSqlDatabase = QSqlDatabase());
-    ORPreRender(const QDomDocument &, QSqlDatabase = QSqlDatabase());
-    ORPreRender(const QDomDocument &, const ParameterList &, QSqlDatabase = QSqlDatabase());
+    ORPreRender(QSqlDatabase = QSqlDatabase::database("Reports"));
+    ORPreRender(const QDomDocument &, QSqlDatabase = QSqlDatabase::database("Reports"));
+    ORPreRender(const QDomDocument &, const ParameterList &, QSqlDatabase = QSqlDatabase::database("Reports"));
     virtual ~ORPreRender();
 
     ORODocument * generate();

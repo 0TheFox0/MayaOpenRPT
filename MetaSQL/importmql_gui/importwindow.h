@@ -21,7 +21,7 @@
 #ifndef IMPORTWINDOW_H
 #define IMPORTWINDOW_H
 
-#include <QMainWindow>
+#include <QtWidgets/QMainWindow>
 
 #include "ui_importwindow.h"
 

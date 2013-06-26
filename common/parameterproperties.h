@@ -23,7 +23,7 @@
 
 #include <QtWidgets/QDialog>
 
-#include "/home/arcnexus/MayaProject/build-openrpt-Desktop-Debug/common/tmp/ui_parameterproperties.h"
+#include "tmp/ui_parameterproperties.h"
 
 class ParameterProperties : public QDialog, public Ui::ParameterProperties
 {

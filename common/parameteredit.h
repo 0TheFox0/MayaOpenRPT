@@ -26,7 +26,7 @@
 
 #include "parameter.h"
 
-#include "/home/arcnexus/MayaProject/build-openrpt-Desktop-Debug/common/tmp/ui_parameteredit.h"
+#include "C:/Users/marco/Documents/QtProyects/build-openrpt-5_0_2_MSVC-Release/common/tmp/ui_parameteredit.h"
 
 
 class ParameterEdit : public QWidget, public Ui::ParameterEdit

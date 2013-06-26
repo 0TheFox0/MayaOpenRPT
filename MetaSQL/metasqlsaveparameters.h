@@ -24,7 +24,7 @@
 #include <QtWidgets/QDialog>
 #include <QString>
 
-#include "/home/arcnexus/MayaProject/build-openrpt-Desktop-Debug/MetaSQL/tmp/ui_metasqlsaveparameters.h"
+#include "tmp/ui_metasqlsaveparameters.h"
 
 class MetaSQLSaveParameters : public QDialog, public Ui::MetaSQLSaveParameters
 {

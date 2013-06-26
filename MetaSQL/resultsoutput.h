@@ -25,7 +25,7 @@
 
 class QMenu;
 
-#include "/home/arcnexus/MayaProject/build-openrpt-Desktop-Debug/MetaSQL/tmp/ui_resultsoutput.h"
+#include "tmp/ui_resultsoutput.h"
 
 class ResultsOutput : public QDialog, public Ui::ResultsOutput
 {

@@ -29,7 +29,7 @@ class QTextDocument;
 #include <QtWidgets/QWidget>
 #include <QTimer>
 
-#include "/home/arcnexus/MayaProject/build-openrpt-Desktop-Debug/MetaSQL/tmp/ui_mqledit.h"
+#include "../tmp/ui_mqledit.h"
 
 #include "metasqlhighlighter.h"
 #include "selectmql.h"

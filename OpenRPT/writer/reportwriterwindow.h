@@ -21,7 +21,7 @@
 #ifndef __REPORTWRITERWINDOW_H__
 #define __REPORTWRITERWINDOW_H_
 
-#include <QMainWindow>
+#include <QtWidgets/QMainWindow>
 #include <QTimerEvent>
 #include <QCloseEvent>
 

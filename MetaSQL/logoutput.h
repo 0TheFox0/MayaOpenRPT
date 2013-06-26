@@ -23,7 +23,7 @@
 
 #include <QtWidgets/QDialog>
 
-#include "/home/arcnexus/MayaProject/build-openrpt-Desktop-Debug/MetaSQL/tmp/ui_logoutput.h"
+#include "tmp/ui_logoutput.h"
 
 class LogOutput : public QDialog, public Ui::LogOutput
 {

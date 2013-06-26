@@ -34,10 +34,10 @@
 #include <xsqlquery.h>
 #include <parameter.h>
 #include <parsexmlutils.h>
-#include <builtinformatfunctions.h>
-#include <builtinSqlFunctions.h>
-#include <pagesizeinfo.h>
-#include <labelsizeinfo.h>
+#include <C:/Users/marco/Documents/QtProyects/OpenRPT/OpenRPT/common/builtinformatfunctions.h>
+#include <C:/Users/marco/Documents/QtProyects/OpenRPT/OpenRPT/common/builtinSqlFunctions.h>
+#include <C:/Users/marco/Documents/QtProyects/OpenRPT/OpenRPT/common/pagesizeinfo.h>
+#include <C:/Users/marco/Documents/QtProyects/OpenRPT/OpenRPT/common/labelsizeinfo.h>
 #include <quuencode.h>
 
 #define CLIPMARGIN 10

@@ -24,7 +24,7 @@
 #include <QtWidgets/QWidget>
 #include <QSqlTableModel>
 
-#include "/home/arcnexus/MayaProject/build-openrpt-Desktop-Debug/MetaSQL/tmp/ui_selectmql.h"
+#include "../tmp/ui_selectmql.h"
 
 class SelectMQL : public QWidget, public Ui::SelectMQL
 {

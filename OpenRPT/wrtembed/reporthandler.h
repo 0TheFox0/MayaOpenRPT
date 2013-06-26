@@ -37,7 +37,7 @@
 #include <QMouseEvent>
 #include <QtWidgets/QFontComboBox>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets>
+#include <QtWidgets/QtWidgets>
 
 #include <parameter.h>
 
@@ -129,7 +129,7 @@ class ReportHandler : public QObject {
         void dbSaveDoc();
 
         void sReportsChanged(int, bool);
-        void onWinChanged(QMdiSubWindow *w);
+        void		onWinChanged(QMdiSubWindow *w);
 
         QDomElement databaseElt() {return _databaseElt;}
         void loadMemDB(const QString &filename, const QDomNode &it);
