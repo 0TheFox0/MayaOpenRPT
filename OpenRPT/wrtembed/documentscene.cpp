@@ -1028,8 +1028,8 @@ bool DocumentScene::saveToDb(QWidget * parent)
     QString src  = document().toString();
     int grade = rptDiag.getGrade();
 
-    XSqlQuery q;
-    XSqlQuery qry;
+    XSqlQuery q(QSqlDatabase::database("Maya"));
+    XSqlQuery qry(QSqlDatabase::database("Maya"));
 
     q.prepare(getSqlFromTag("fmt09", QSqlDatabase::database().driverName()));
     q.bindValue(":report_name", name);

@@ -1486,7 +1486,7 @@ void ReportHandler::dbLoadDoc() {
 
 void ReportHandler::dbSaveDoc()
 {
-    QSqlDatabase db = QSqlDatabase::database(/*QSqlDatabase::defaultConnection*/"Reports", false);
+    QSqlDatabase db = QSqlDatabase::database(/*QSqlDatabase::defaultConnection*/"Maya", false);
   if(db.isValid())
   {
     DocumentWindow * gw = activeDocumentWindow();
